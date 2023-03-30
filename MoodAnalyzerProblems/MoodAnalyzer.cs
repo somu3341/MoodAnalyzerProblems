@@ -15,9 +15,9 @@
                     return "SAD";
                 return "HAPPY";
             }
-            catch(Exception ex)
+            catch(MoodAnalyzerException)
             {
-                return "HAPPY";
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NULL_MOOD, "Message is Null");
             }
         }
     }
