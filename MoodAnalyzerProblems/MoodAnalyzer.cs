@@ -8,10 +8,10 @@
             this.message = message;
         }
         public string AnalyzeMood()
-        {
+        { 
             if (message.ToLower().Contains("sad"))
-                return "SAD";
-            return "HAPPY";
+              return "SAD";
+              return "HAPPY";         
         }
     }
 }
