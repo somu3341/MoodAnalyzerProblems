@@ -8,10 +8,17 @@
             this.message = message;
         }
         public string AnalyzeMood()
-        { 
-            if (message.ToLower().Contains("sad"))
-              return "SAD";
-              return "HAPPY";         
+        {
+            try
+            {
+                if (message.ToLower().Contains("sad"))
+                    return "SAD";
+                return "HAPPY";
+            }
+            catch(Exception ex)
+            {
+                return "HAPPY";
+            }
         }
     }
 }
