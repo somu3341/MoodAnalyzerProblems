@@ -10,7 +10,7 @@ namespace MoodAnalyzerTest
             string message = "I am in a Sad Mood";
             MoodAnalyzer analyzer = new MoodAnalyzer(message);
             string result = analyzer.AnalyzeMood();
-            Assert.AreEqual("SAD",result);
+            Assert.AreEqual("SAD", result);
         }
         [Test]
         public void GivenAnyMood_WhenAnalyze_ShouldReturnSad()
@@ -32,7 +32,7 @@ namespace MoodAnalyzerTest
             catch (MoodAnalyzerException ex)
             {
                 Assert.AreEqual(ex.Message, "Message is Null");
-            }          
+            }
         }
         [Test]
         public void GivenEmptyMood_WhenAnalyze_ShouldReturn()
@@ -49,22 +49,23 @@ namespace MoodAnalyzerTest
                 Assert.AreEqual(ex.Message, "Message is Empty");
             }
         }
+        //UC-4.1
         [Test]
-        public void GivenClassName_WhenAnanlyze_ShouldReturnMoodAnanlyzeObject()
+        public void GivenClassName_WhenAnalyze_ShouldReturnMoodAnanlyzeObject()
         {
             string message = null;
             object expected = new MoodAnalyzer(message);
-            object obj = MoodAnalyzerFactory.CreatMoodAnalyzer("MoodAnalyzerProblems.MoodAnalyzer", "MoodAnalyzer");
+            object obj = MoodAnalyzerFactory.CreatMoodAnalyzer("MAnalyzer.MoodAnalyzer", "MoodAnalyzer");
             expected.Equals(obj);
         }
         [Test]
-        public void GivenClassNameImproper_WhenAnalyze_ShouldThrowException()
+        public void GivenClassNameImproper_ShouldThrowException()
         {
             try
             {
                 string message = null;
                 object expected = new MoodAnalyzer(message);
-                object obj = MoodAnalyzerFactory.CreatMoodAnalyzer("MAnalyzer.Mood_analyzer", "MoodAnalyzer");
+                object obj = MoodAnalyzerFactory.CreatMoodAnalyzer("MAnalyzer.MoodAnalyzer", "MoodAnalyzer");
                 expected.Equals(obj);
             }
             catch (Exception ex)
@@ -73,7 +74,7 @@ namespace MoodAnalyzerTest
             }
         }
         [Test]
-        public void GivenConstructorNameImproper_WhenAnalyze_ShouldThrowException()
+        public void GivenConstructorNameImproper_ShouldThrowException()
         {
             try
             {

@@ -20,7 +20,8 @@ namespace MoodAnalyzerProblems
                 {
                     Assembly executing = Assembly.GetExecutingAssembly();
                     Type type = executing.GetType(className);
-                    return Activator.CreateInstance(type);
+                    // return Activator.CreateInstance(type);
+                    return type;
                 }
                 catch (ArgumentNullException)
                 {

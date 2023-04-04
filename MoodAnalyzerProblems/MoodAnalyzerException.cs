@@ -10,13 +10,11 @@ namespace MoodAnalyzerProblems
     {
         public enum ExceptionType
         {
-            NULL_MOOD,EMPTY_MOOD,
-            NO_SUCH_CLASS,
-            NO_SUCH_METHOD,
+            NULL_MOOD,EMPTY_MOOD, NO_SUCH_CLASS, NO_SUCH_METHOD
         }
         private ExceptionType exceptionType;
 
-        public MoodAnalyzerException(ExceptionType type, string message):base(message)
+        public MoodAnalyzerException(ExceptionType type, string message): base(message)
         {
             this.exceptionType = type;
         }
